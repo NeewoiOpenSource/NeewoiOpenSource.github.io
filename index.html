@@ -161,19 +161,36 @@ src="img/Docker-logo-and-type.sh.png"/>
       </div>
     
   
-  
+    <style>
+          @keyframes latidos {
+    from { transform: none; }
+    50% { transform: scale(1.4); }
+    to { transform: none; }
+}
+         
+          .corazon {
+	display: inline-block;
+	font-size: 40px;
+	text-shadow: 0 0 10px #222,1px 1px  0 #450505;
+	color: red;
+	animation: latidos .5s infinite;
+	transform-origin: center;
+}
+    </style>
   
 
   <div class="footer">
     <div class="container-lrg flex">
       <div class="col-6 text-center">
         <div class="contribute-copy center vertical text-center">
-          <p class="paragraph">
-            2017. Made  with <a> <i class="fa fa-heart" style=";color:red;" aria-hidden="true"></i></a>  by Neewoi
-          </p>
+          <samp>
+           
+              <a class="hola"> 2017. Made  with</a> <div class="corazon">&#x2665;</div> <a class="hola"> by Neewoi </a>
+          </samp>
           
         </div>
       </div>
+    
       <div class="col-6 text-center">
               <a class="hola">
           <!--<img class="logo-img" src="img/gulp-white-text.svg">-->
