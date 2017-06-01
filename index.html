@@ -125,25 +125,27 @@ src="img/Docker-logo-and-type.sh.png"/>
             <span class="editor-filename">Dockerfile</span>
           </div>
           <pre><code class="javascript hljs">
-<span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
-<span class="hljs-keyword">var</span> pug = <span class="mobile-show"><br />  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-pug'</span>);
-<span class="hljs-keyword">var</span> less = <span class="mobile-show"><br />  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-less'</span>);
-<span class="hljs-keyword">var</span> minifyCSS = <span class="mobile-show"><br />  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-csso'</span>);
+<span class="hljs-keyword">FROM</span> debian
+<span class="hljs-keyword">RUN</span>  apt-get install -y nano
+<span class="hljs-keyword">RUN</span>  curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+<span class="hljs-keyword">RUN</span>  sudo apt-get install -y nodejs
+<span class="hljs-keyword">RUN</span>  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+<span class="hljs-keyword">RUN</span>  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+<span class="hljs-keyword">RUN</span>  sudo apt-get update && sudo apt-get install yarn -y
+<span class="hljs-keyword">RUN</span>  apt-get install -y git
+<span class="hljs-keyword">RUN</span>  npm install express-generator -g
+<span class="hljs-keyword">RUN</span>  express --view=pug myapp
+<span class="hljs-keyword">RUN</span>  cd myapp
+<span class="hljs-keyword">RUN</span>  DEBUG=myapp:* npm start
+        
+         
 
-gulp.task(<span class="hljs-string">'html'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-  <span class="hljs-keyword">return</span> gulp.src(<span class="mobile-show"><br />      </span><span class="hljs-string">'client/templates/*.pug'</span><span class="mobile-show"><br />    </span>)
-    .pipe(pug())
-    .pipe(gulp.dest(<span class="mobile-show"><br />      </span><span class="hljs-string">'build/html'</span><span class="mobile-show"><br />    </span>))
-});
+         
+         
 
-gulp.task(<span class="hljs-string">'css'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-  <span class="hljs-keyword">return</span> gulp.src(<span class="mobile-show"><br />      </span><span class="hljs-string">'client/templates/*.less'</span><span class="mobile-show"><br />    </span>)
-    .pipe(less())
-    .pipe(minifyCSS())
-    .pipe(gulp.dest(<span class="mobile-show"><br />      </span><span class="hljs-string">'build/css'</span><span class="mobile-show"><br />    </span>))
-});
-
-gulp.task(<span class="hljs-string">'default'</span>, <span class="mobile-show"><br />  </span>[ <span class="hljs-string">'html'</span>, <span class="hljs-string">'css'</span> ]<span class="mobile-show"><br /></span>);
+        
+        
+         
           </code></pre>
         </div>
       </div>
