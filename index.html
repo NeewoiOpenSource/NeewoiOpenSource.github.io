@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Docker</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <link href="css/main.css" rel="stylesheet" type="text/css">
+  <link href="css/devices.css" rel="stylesheet" type="text/css">
+  <link href="img/favicon.png" rel="icon" type="image/png">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
+</head>
+<body>
+ <style>
+      .hola {
+        font-family: 'Tangerine', serif;
+        font-size: 48px;
+      }
+    </style>
+  <header class="header">
+    <div class="container-lrg">
+      <div class="col-12 spread aligncenter">
+        <a class="hola">
+          <!--<img class="logo-img" src="img/gulp-white-text.svg">-->
+          José Gabriel Guzmán Lopéz
+        </a>
+        <div class="mobile-col-12 spread">
+         <!-- <a class="nav-link" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md">Docs</a>
+          <a class="nav-link" href="http://gulpjs.com/plugins">Plugins</a>
+          <a class="nav-link" href="https://twitter.com/gulpjs">Twitter</a>
+          <a class="nav-link" href="https://github.com/gulpjs/gulp/blob/master/CONTRIBUTING.md">Contribute</a>-->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lrg">
+      <div class="col-12">
+        <h1 class="heading text-center">Neewoi Charla Docker y React </h1>
+      </div>
+    </div>
+
+    <div class="container-lrg">
+      <div class="centerdevices col-12">
+        <div class="computerwrapper">
+          <div class="computer">
+            <div class="mask">
+                <div class="editor-window logo-cli">
+                  <pre><code>
+<span class="editor-prefixed">docker pull centos</span>
+<span class="editor-prefixed">docker images</span>
+<span class="editor-prefixed">docker ps -a</span>
+<span class="editor-prefixed">docker run -it  centos bash</span>
+<span class="editor-prefixed">docker ps</span>
+<span class="editor-prefixed">docker commit {'_id_'} centosNano</span>
+<span class="editor-prefixed">docker images</span>
+<span class="editor-prefixed">docker attach 02d251</span>
+
+
+<span class="editor-prefixed"></span>
+               
+                
+                 </code></pre>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-sml">
+      <div class="col-12 text-center">
+        <h2 class="paragraph">
+          " Docker is the world’s leading software container platform. Developers use Docker to eliminate “works on my machine” problems when collaborating on code with co-workers. Operators use Docker to run and manage apps side-by-side in isolated containers to get better compute density. Enterprises use Docker to build agile software delivery pipelines to ship new features faster, more securely and with confidence for both Linux and Windows Server apps."
+         
+        </h2>
+        
+        <a href="https://www.docker.com/what-docker"><p class="paragraph">https://www.docker.com/what-docker</p></a>
+        <!--<div class="ctas">
+          <a class="ctas-button" href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md">Get Started</a>
+        </div>-->
+        
+      </div>
+    </div>
+  </header>
+
+  <div class="feature3">
+    <div class="container-lrg flex baseline">
+     
+     <div class="col-4">
+        <b class="svg center"><img class="mask-img" src="img/button%20(1).png"></b>
+        <h3 class="subheading center">Manual</h3>
+        <p class="paragraph">
+          User manual
+        </p>
+      </div>
+     
+      <div class="col-4">
+        <b class="svg center"><img class="mask-img" src="img/ec2_logo.png"></b>
+        <h3 class="subheading center">Log into EC2 Colnsole</h3>
+        <p class="paragraph">
+          Deploy & scale your application on AWS with Docke
+        </p>
+      </div>
+      
+      <div class="col-4">
+        <b class="svg center"><img class="mask-img" src="img/nodejs-601628d09d.png"></b>
+        <h3 class="subheading center">App</h3>
+        <p class="paragraph">
+          
+        </p>
+      </div>
+      
+      
+      
+
+      </div> 
+    </div>
+    
+    <img style="display:scroll;
+position:fixed; bottom:0px; right:0px;"
+src="img/Docker-logo-and-type.sh.png"/>
+  
+
+  <div class="whatisgulp">
+    <div class="container-lrg">
+      <div class="col-12">
+        <div class="editor-window">
+          <div class="editor-menubar">
+            <span class="editor-button close"></span>
+            <span class="editor-button minimize"></span>
+            <span class="editor-button maximize"></span>
+            <span class="editor-filename">Dockerfile</span>
+          </div>
+          <pre><code class="javascript hljs">
+<span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+<span class="hljs-keyword">var</span> pug = <span class="mobile-show"><br />  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-pug'</span>);
+<span class="hljs-keyword">var</span> less = <span class="mobile-show"><br />  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-less'</span>);
+<span class="hljs-keyword">var</span> minifyCSS = <span class="mobile-show"><br />  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-csso'</span>);
+
+gulp.task(<span class="hljs-string">'html'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">return</span> gulp.src(<span class="mobile-show"><br />      </span><span class="hljs-string">'client/templates/*.pug'</span><span class="mobile-show"><br />    </span>)
+    .pipe(pug())
+    .pipe(gulp.dest(<span class="mobile-show"><br />      </span><span class="hljs-string">'build/html'</span><span class="mobile-show"><br />    </span>))
+});
+
+gulp.task(<span class="hljs-string">'css'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">return</span> gulp.src(<span class="mobile-show"><br />      </span><span class="hljs-string">'client/templates/*.less'</span><span class="mobile-show"><br />    </span>)
+    .pipe(less())
+    .pipe(minifyCSS())
+    .pipe(gulp.dest(<span class="mobile-show"><br />      </span><span class="hljs-string">'build/css'</span><span class="mobile-show"><br />    </span>))
+});
+
+gulp.task(<span class="hljs-string">'default'</span>, <span class="mobile-show"><br />  </span>[ <span class="hljs-string">'html'</span>, <span class="hljs-string">'css'</span> ]<span class="mobile-show"><br /></span>);
+          </code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+    
+      <div class="flex text-center">
+        <div class="col-12">
+          <img src="img/Screen-Shot-2016-05-08-at-13-46-03%20(1).png">
+        </div>
+      </div>
+    
+  
+  
+  
+
+  <div class="footer">
+    <div class="container-lrg flex">
+      <div class="col-6 text-center">
+        <div class="contribute-copy center vertical text-center">
+          <p class="paragraph">
+            2017. Made with  by Neewoi
+          </p>
+          
+        </div>
+      </div>
+      <div class="col-6 text-center">
+        <h3 class="subheading">Docker</h3>
+      </div>
+    </div>
+  </div>
+
+  <script src="//unpkg.com/promise-polyfill@6.0.2/promise.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+  <script async src="/js/script.js"></script>
+</body>
+</html>
