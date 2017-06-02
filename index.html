@@ -26,8 +26,8 @@
               <a class="hola"> 2017. Made  with</a> <div class="corazon">&#x2665;</div> <a class="hola"> by Neewoi </a>
           </samp>
         <div class="mobile-col-12 spread">
-         <!-- <a class="nav-link" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md">Docs</a>
-          <a class="nav-link" href="http://gulpjs.com/plugins">Plugins</a>
+         
+         <!-- <a class="nav-link" href="http://gulpjs.com/plugins">Plugins</a>
           <a class="nav-link" href="https://twitter.com/gulpjs">Twitter</a>
           <a class="nav-link" href="https://github.com/gulpjs/gulp/blob/master/CONTRIBUTING.md"><i class="fa fa-linux" aria-hidden="true"></i></a>-->
         </div>
@@ -56,6 +56,7 @@
 <span class="editor-prefixed">docker images</span>
 <span class="editor-prefixed">docker attach 02d251</span>
 <span class="editor-prefixed">docker container prune</span>
+<span class="editor-prefixed">docker build -t myserver .</span>
                  </code></pre>
                 </div>
             </div>
@@ -129,27 +130,26 @@ src="img/Docker-logo-and-type.sh.png"/>
             <span class="editor-filename">Dockerfile</span>
           </div>
           <pre><code class="javascript hljs">
-<span class="hljs-keyword">FROM</span> debian
-<span class="hljs-keyword">RUN</span>  apt-get install -y nano
-<span class="hljs-keyword">RUN</span>  curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-<span class="hljs-keyword">RUN</span>  sudo apt-get install -y nodejs
-<span class="hljs-keyword">RUN</span>  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-<span class="hljs-keyword">RUN</span>  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-<span class="hljs-keyword">RUN</span>  sudo apt-get update && sudo apt-get install yarn -y
-<span class="hljs-keyword">RUN</span>  apt-get install -y git
-<span class="hljs-keyword">RUN</span>  npm install express-generator -g
-<span class="hljs-keyword">RUN</span>  express --view=pug myapp
-<span class="hljs-keyword">RUN</span>  cd myapp
-<span class="hljs-keyword">RUN</span>  DEBUG=myapp:* npm start
-        
-         
-
-         
-         
-
-        
-        
-         
+<span class="hljs-built_in">1</span>   <span class="hljs-keyword">FROM</span> node:baron
+<span class="hljs-built_in">2</span>   <span class="hljs-keyword"></span>
+<span class="hljs-built_in">3</span>   <span class="hljs-keyword">RUN</span>  apt-get update
+<span class="hljs-built_in">4</span>   <span class="hljs-keyword">RUN</span>  apt-get -y install timidity
+<span class="hljs-built_in">5</span>   <span class="hljs-keyword"></span>
+<span class="hljs-built_in">6</span>   <span class="hljs-keyword">RUN</span>  mkdir -p /usr/src/app
+<span class="hljs-built_in">7</span>   <span class="hljs-keyword">WORKDIR</span>  /usr/src/app
+<span class="hljs-built_in">8</span>   <span class="hljs-keyword"></span>
+<span class="hljs-built_in">9</span>   <span class="hljs-keyword">RUN</span>  yarn install  
+<span class="hljs-built_in">10</span>  <span class="hljs-keyword">COPY</span>  ./usr/src/app
+<span class="hljs-built_in">11</span>  <span class="hljs-keyword"></span>
+<span class="hljs-built_in">12</span>  <span class="hljs-keyword">CMD</span>["yarn start"]
+<span class="hljs-built_in">13</span>
+<span class="hljs-built_in">14</span>
+<span class="hljs-built_in">15</span>
+<span class="hljs-built_in">16</span>
+<span class="hljs-built_in">17</span>         
+<span class="hljs-built_in">18</span>
+<span class="hljs-built_in">18</span>
+<span class="hljs-built_in">19</span>         
           </code></pre>
         </div>
       </div>
